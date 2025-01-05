@@ -59,7 +59,7 @@ class Pet:
 
 def input_with_timer(prompt, timeout):
     clear_screen()
-    # Show pet menu
+    
     print("== Update the Pet ==")
     print("1. Feed the Pet")
     print("2. Play with Pet")
@@ -68,16 +68,16 @@ def input_with_timer(prompt, timeout):
     
     print(f"\nYou have {timeout} seconds to respond!")
     
-    # Start timing
+    
     start_time = time.time()
     
-    # Get input
+    
     user_input = input(prompt)
     
-    # Check if time is up
+    
     if time.time() - start_time > timeout:
         print("\nTime's up! Too slow!")
-        time.sleep(1)  # Show the message for a second
+        time.sleep(1)  
         return None
     
     return user_input
@@ -114,7 +114,7 @@ def pet_game(pet):
 
         # Show current pet status before choice
         pet.pet_status()
-        choice = input_with_timer("Enter your choice (1/2/3/4): ", 12)  # Changed to 12 seconds
+        choice = input_with_timer("Enter your choice (1/2/3/4): ", 12)  
 
         if choice is None:
             print(f"\n{pet.pet_name} got distracted while waiting!")
@@ -132,7 +132,7 @@ def pet_game(pet):
             print("Invalid choice. Please try again.")
 
         win_count = pet.check_win(win_count)
-        time.sleep(1)  # Give time to read the update
+        time.sleep(1)  
 
 def main():
     pet = None
